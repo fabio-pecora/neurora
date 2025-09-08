@@ -1,0 +1,175 @@
+
+/* Neurora Futuristic Theme */
+:root{
+  --bg:#0b0f17;
+  --panel:#111725cc;
+  --text:#e6f0ff;
+  --muted:#a7b3cc;
+  --accent:#7c3cff;
+  --accent2:#00e6ff;
+  --glow: 0 0 8px var(--accent), 0 0 24px var(--accent);
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 70% -10%, rgba(124,60,255,.35), transparent 60%),
+              radial-gradient(900px 600px at -10% 30%, rgba(0,230,255,.25), transparent 60%),
+              var(--bg);
+  background-attachment: fixed;
+  line-height:1.6;
+}
+
+a{color:inherit;text-decoration:none}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+
+.nav{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background:linear-gradient(180deg, rgba(17,23,37,.85), rgba(17,23,37,.55));
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav .inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.4px}
+.brand .logo{
+  width:36px;height:36px;border-radius:10px;
+  background: conic-gradient(from 210deg at 50% 50%, var(--accent), var(--accent2), var(--accent));
+  box-shadow: 0 0 16px rgba(124,60,255,.6);
+}
+.menu{display:flex;gap:18px;align-items:center}
+.menu a{padding:8px 14px;border-radius:12px;opacity:.9}
+.menu a:hover{background:rgba(255,255,255,.06);opacity:1;box-shadow: inset 0 0 0 1px rgba(255,255,255,.08)}
+
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{width:24px;height:2px;background:var(--text);border-radius:2px}
+
+@media(max-width:860px){
+  .menu{display:none}
+  .burger{display:flex}
+  .menu.mobile{display:flex;flex-direction:column;padding:12px 24px;gap:12px}
+}
+
+.hero{
+  padding:84px 24px 40px;
+}
+.hero h1{
+  font-size: clamp(36px, 5vw, 64px);
+  line-height:1.05;
+  margin:0 0 14px;
+  letter-spacing:.3px;
+  text-shadow: 0 12px 60px rgba(124,60,255,.2);
+}
+.hero p{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:780px;margin:0 0 26px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background: rgba(124,60,255,.12);
+  padding:8px 12px;border:1px solid rgba(124,60,255,.35);
+  border-radius:999px;font-size:13px;color:#d8c9ff;
+  margin-bottom:12px;
+  box-shadow: 0 0 18px rgba(124,60,255,.25) inset;
+}
+
+.row{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch}
+@media(max-width:960px){.row{grid-template-columns:1fr}}
+
+.panel{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  box-shadow: 0 15px 60px rgba(0,0,0,.45), 0 0 24px rgba(124,60,255,.15);
+  padding:22px;
+  position:relative;
+  overflow:hidden;
+}
+
+.cta{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 16px;border-radius:14px;font-weight:600;
+  background:linear-gradient(90deg, var(--accent), var(--accent2));
+  color:#0b0f17;
+  box-shadow: var(--glow);
+  transform:translateZ(0);
+}
+.cta:hover{filter:saturate(120%);transform:translateY(-1px);}
+.ghost{
+  background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.14);
+  box-shadow:none;
+}
+.ghost:hover{box-shadow:0 0 14px rgba(255,255,255,.14) inset}
+
+.grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+@media(max-width:960px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.grid{grid-template-columns:1fr}}
+
+.card{
+  position:relative;
+  border-radius:16px;
+  background:linear-gradient(180deg, rgba(17,23,37,.9), rgba(17,23,37,.6));
+  border:1px solid rgba(255,255,255,.08);
+  padding:18px; overflow:hidden;
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 60px rgba(0,0,0,.45), 0 0 28px rgba(0,230,255,.18)}
+.card:before{
+  content:""; position:absolute; inset:-1px;
+  border-radius:18px; padding:1px; pointer-events:none;
+  background:linear-gradient(120deg, rgba(124,60,255,.65), rgba(0,230,255,.65));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  opacity:.25; transition:opacity .2s ease;
+}
+.card:hover:before{opacity:.66}
+.card h3{margin:6px 0 6px;font-size:20px}
+.card p{margin:0;color:var(--muted)}
+
+.kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; background:rgba(255,255,255,.06); padding:1px 6px; border-radius:6px; border:1px solid rgba(255,255,255,.08)}
+
+.footer{
+  padding:32px 24px; color:#9aa8c6; font-size:14px;
+  display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center
+}
+.footer .social{display:flex; gap:14px; align-items:center}
+.icon{
+  width:22px;height:22px;display:inline-block;vertical-align:middle;
+  filter: drop-shadow(0 0 8px rgba(124,60,255,.45));
+}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:900px){.split{grid-template-columns:1fr}}
+
+.list{margin:8px 0 0;padding:0;list-style:none}
+.list li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;color:var(--muted)}
+
+.tag{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;font-size:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+
+.section-title{font-size:26px;margin:8px 0 12px}
+.section-sub{color:var(--muted);margin-top:-4px;margin-bottom:14px}
+
+/* Reveal on scroll */
+.reveal{opacity:0; transform: translateY(14px); transition: all .5s ease}
+.reveal.show{opacity:1; transform: translateY(0)}
+
+/* Big social buttons */
+.social-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:640px){.social-grid{grid-template-columns:1fr}}
+.social-btn{
+  display:flex; align-items:center; gap:12px;
+  padding:16px; border-radius:14px; font-weight:600;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease, filter .2s ease;
+}
+.social-btn:hover{transform: translateY(-2px); box-shadow: 0 14px 40px rgba(0,0,0,.45), 0 0 24px rgba(0,230,255,.25); border-color: rgba(255,255,255,.18); filter: saturate(120%)}
+.social-btn .icon{width:26px;height:26px}
+
+/* Glow focus */
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent2); outline-offset:2px; box-shadow: 0 0 0 4px rgba(0,230,255,.2)}
+
+/* Starfield */
+.stars{position:absolute; inset:0; pointer-events:none; background:radial-gradient(1px 1px at 20% 30%, #7c9eff 60%, transparent), radial-gradient(1px 1px at 80% 40%, #66fff0 60%, transparent), radial-gradient(1px 1px at 40% 80%, #a98bff 60%, transparent); opacity:.25}
