@@ -173,3 +173,13 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--accent2); outline-
 
 /* Starfield */
 .stars{position:absolute; inset:0; pointer-events:none; background:radial-gradient(1px 1px at 20% 30%, #7c9eff 60%, transparent), radial-gradient(1px 1px at 80% 40%, #66fff0 60%, transparent), radial-gradient(1px 1px at 40% 80%, #a98bff 60%, transparent); opacity:.25}
+
+/* Character header with avatar */
+.card .head{display:flex; align-items:center; gap:10px; margin-bottom:6px}
+.card .avatar{
+  width:36px; height:36px; border-radius:999px; object-fit:cover;
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow: 0 0 10px rgba(0,0,0,.25), 0 0 10px rgba(124,60,255,.25);
+  flex:0 0 auto;
+}
+.card .head h3{margin:0; font-size:20px}
