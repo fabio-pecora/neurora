@@ -183,3 +183,44 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--accent2); outline-
   flex:0 0 auto;
 }
 .card .head h3{margin:0; font-size:20px}
+
+
+
+/* Creator page */
+.creator-hero{position:relative; padding:80px 0}
+.creator-hero .hero-wrap{display:grid; grid-template-columns: 1.1fr .9fr; gap:32px; align-items:center}
+.creator-hero .hero-text .chips{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 8px}
+.chip{border:1px solid rgba(255,255,255,.14); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--muted); backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.05))}
+.creator-hero .hero-card{position:relative; padding:20px; border-radius:var(--radius); background:var(--panel); border:1px solid rgba(255,255,255,.1); box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 40px rgba(124,60,255,.12); text-align:center}
+.creator-hero .portrait{width:100%; aspect-ratio: 4/5; object-fit:cover; border-radius:14px; border:1px solid rgba(255,255,255,.15); box-shadow: 0 0 20px rgba(0,0,0,.35)}
+.glow-ring{position:absolute; inset:-6px; border-radius:var(--radius); background: radial-gradient(120px 60px at 20% 0%, rgba(0,230,255,.15), transparent), radial-gradient(120px 60px at 80% 100%, rgba(124,60,255,.18), transparent); filter: blur(18px); z-index:-1}
+.creator-hero .stats{display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:12px}
+.creator-hero .stats div{background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:8px}
+.creator-hero .stats strong{display:block; font-size:18px}
+.creator-hero .stats span{font-size:12px; color:var(--muted)}
+
+.creator-grid{display:grid; grid-template-columns: .9fr 1.1fr; gap:24px}
+.bio-list{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.bio-list li{display:flex; justify-content:space-between; gap:12px; padding:10px 12px; background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:12px}
+.bio-list li span{color:var(--muted)}
+.bio-list li strong{color:var(--text)}
+.bullets{display:grid; gap:12px}
+.bullet{display:grid; grid-template-columns: 16px 1fr; gap:12px; align-items:start}
+.bullet .dot{width:10px; height:10px; margin-top:8px; border-radius:999px; background: radial-gradient(circle at 30% 30%, var(--accent2), var(--accent)); box-shadow: var(--glow)}
+
+.timeline{position:relative; display:grid; gap:18px; margin-top:10px}
+.timeline:before{content:""; position:absolute; left:12px; top:0; bottom:0; width:2px; background:linear-gradient(var(--accent2), transparent)}
+.tl-item{position:relative; padding-left:34px}
+.tl-dot{position:absolute; left:5px; top:10px; width:14px; height:14px; border-radius:999px; background: radial-gradient(circle at 30% 30%, var(--accent2), var(--accent)); box-shadow: var(--glow)}
+.tl-card h4{margin:0 0 6px 0}
+
+.skills{display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:14px; margin-top:10px}
+.skill{display:flex; flex-direction:column; gap:8px}
+.skill span{font-size:14px; color:var(--muted)}
+.skill .bar{height:8px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); overflow:hidden}
+.skill .bar i{display:block; height:100%; background: linear-gradient(90deg, var(--accent2), var(--accent)); box-shadow: var(--glow)}
+
+@media (max-width: 900px){
+  .creator-hero .hero-wrap{grid-template-columns: 1fr; gap:20px}
+  .creator-grid{grid-template-columns: 1fr}
+}
