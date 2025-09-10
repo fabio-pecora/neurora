@@ -191,8 +191,46 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--accent2); outline-
 .creator-hero .hero-wrap{display:grid; grid-template-columns: 1.1fr .9fr; gap:32px; align-items:center}
 .creator-hero .hero-text .chips{display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 8px}
 .chip{border:1px solid rgba(255,255,255,.14); padding:6px 10px; border-radius:999px; font-size:12px; color:var(--muted); backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.05))}
-.creator-hero .hero-card{position:relative; padding:20px; border-radius:var(--radius); background:var(--panel); border:1px solid rgba(255,255,255,.1); box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 40px rgba(124,60,255,.12); text-align:center}
-.creator-hero .portrait{width:100%; aspect-ratio: 4/5; object-fit:cover; border-radius:14px; border:1px solid rgba(255,255,255,.15); box-shadow: 0 0 20px rgba(0,0,0,.35)}
+.creator-hero .hero-card {
+  position: relative;
+  max-width: 280px;   /* shrink the whole card */
+  margin: 0 auto;     /* center it */
+  padding: 12px;      /* less padding around the image */
+  border-radius: var(--radius);
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,.35), 0 0 20px rgba(124,60,255,.12);
+  text-align: center;
+}
+
+.creator-hero .portrait {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 0 14px rgba(0,0,0,.35);
+}
+
+.creator-hero .hero-card {
+  position: relative;
+  max-width: 280px;   
+  margin: 0 auto;     /* center it */
+  padding: 12px;      /* less padding around the image */
+  border-radius: var(--radius);
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,.35), 0 0 20px rgba(124,60,255,.12);
+  text-align: center;
+}
+
+.creator-hero .portrait {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 0 14px rgba(0,0,0,.35);
+}
+
 .glow-ring{position:absolute; inset:-6px; border-radius:var(--radius); background: radial-gradient(120px 60px at 20% 0%, rgba(0,230,255,.15), transparent), radial-gradient(120px 60px at 80% 100%, rgba(124,60,255,.18), transparent); filter: blur(18px); z-index:-1}
 .creator-hero .stats{display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:12px}
 .creator-hero .stats div{background:rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:8px}
