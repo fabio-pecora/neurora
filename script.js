@@ -7,7 +7,7 @@ if(burger){
     if(existing){ existing.remove(); return; }
     const m = document.createElement('div');
     m.className = 'menu mobile';
-    m.innerHTML = `<a href="index.html">Home</a><a href="about.html">About</a><a href="connect.html">Connect</a>`;
+    m.innerHTML = `<a href="index.html">Home</a><a href="about.html">About</a><a href="connect.html">Connect</a><a href="creator.html">Meet the Creator</a>`;
     document.querySelector('.nav').appendChild(m);
   });
 }
